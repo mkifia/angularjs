@@ -8,38 +8,17 @@
 </head>
 <body ng-app class="container">
 	<hr>
-
-	<div>
-		<input type="text" ng-model="nom" placeholder="avec angular">
-		<span>{{nom}}</span>
-	</div>
+	<ng-include src="'tpl.html'" scope="" onload=""></ng-include>
+	<ng-include src="'tpl.html'" scope="" onload=""></ng-include>
 	
-	<div>
-		<input type="text" id="textfield" placeholder="avec jQuery">
-		<span id="nom1"></span>
-	</div>
-	<hr>
-	<!-- addition entre deux nombres -->
-	<div>
-		<input type="number" ng-model="a" ng-init="a=0"> +
-		<input type="number" ng-model="b" ng-init="b=0">
-		<br> <span>Résultat : {{ a + b }}</span>
-	</div>
-	<hr>
-	<!-- remplacement des espaces par des tirets -->
-	<div>
-	<input type="text" ng-model="slug" ng-init="slug='un titre avec espace'">
-		{{ d = slug.split(' '); d.join('-') }}
-	</div>
-	<hr>
-	<!-- autre exemple ... -->
-	<div>
-	<input type="text" ng-model="chars" ng-init="chars='AngularJS';">
-		Nombre de caractères : {{ chars.length }}
-	</div>
-
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="web/js/test.js"></script>
+	<script type="text/ng-template" id="tpl.html">
+		<h1>Ma template</h1>
+		<div>
+			<p>Le contenu de ma template</p>
+		</div>
+	</script>
 </body>
 </html>
