@@ -29,6 +29,7 @@ app.controller('parentCtrl', ['$scope', '$timeout', function($scope, $timeout){
 	$timeout(function() {
 		$scope.$broadcast('Nomevt', 'Message aux descendants');
 	});
+
 	$scope.$on('emit', function(event, data) {
 		console.log('Reçu dans child :' +data);
 	});
@@ -44,3 +45,9 @@ app.controller('childCtrl', ['$scope', function($scope){
 		$scope.$emit('emit', 'Message aux ascendants');
 	});
 }]);
+
+app.controller('watchCtrl', function ($scope) {
+	$scope.$watch('pays === "France"', function (newValue, oldValue) {
+		console.log(newValue);
+	});
+});
