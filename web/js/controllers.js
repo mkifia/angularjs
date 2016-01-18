@@ -22,11 +22,11 @@ app.controller('catalogue', ['$scope', function ($scope) {
 }]);
 
 app.controller('parentCtrl', ['$scope', function($scope){
-	$scope.prenom = 'foo';
+	$scope.parent.prenom = 'foo';
 	$scope.user = {prenom: 'bar'};
 	$scope.items = [1, 2, 3];
 }]);
 
 app.controller('childCtrl', ['$scope', function($scope){
-	// $scope.prenom = 'foo bar';
+	$scope.child.prenom = 'foo bar';
 }])
